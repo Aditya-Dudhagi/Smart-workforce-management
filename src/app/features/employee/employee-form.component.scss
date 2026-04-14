@@ -1,0 +1,51 @@
+.employee-form-page {
+  padding: 16px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.step-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.section-label {
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.profile-upload,
+.skills-block,
+.documents-block {
+  margin-bottom: 16px;
+}
+
+.profile-preview {
+  width: 88px;
+  height: 88px;
+  border-radius: 999px;
+  object-fit: cover;
+  margin-top: 10px;
+  border: 2px solid #cfd8dc;
+}
+
+.documents-list {
+  margin: 10px 0 0;
+  padding-left: 16px;
+}
+
+@media (max-width: 900px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}

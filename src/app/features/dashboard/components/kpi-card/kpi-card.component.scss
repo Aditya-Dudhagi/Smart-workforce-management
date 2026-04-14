@@ -1,0 +1,37 @@
+.kpi-card {
+  border-left: 5px solid var(--kpi-color, #1976d2);
+  min-height: 116px;
+}
+
+.kpi-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: rgba(0, 0, 0, 0.65);
+  margin-bottom: 8px;
+}
+
+.kpi-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.kpi-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f172a;
+  animation: counterPop 500ms ease;
+}
+
+@keyframes counterPop {
+  0% {
+    opacity: 0.35;
+    transform: translateY(8px) scale(0.96);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

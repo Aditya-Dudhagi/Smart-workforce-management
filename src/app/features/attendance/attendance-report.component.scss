@@ -1,0 +1,63 @@
+.attendance-report-page {
+  padding: 16px;
+}
+
+.selectors {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.weekday {
+  font-weight: 600;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.72);
+}
+
+.day-cell {
+  min-height: 52px;
+  border-radius: 8px;
+  border: 1px solid #eceff1;
+  display: grid;
+  place-items: center;
+}
+
+.day-number {
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+.day-cell.present {
+  background: #e8f5e9;
+}
+
+.day-cell.absent {
+  background: #ffebee;
+}
+
+.day-cell.halfday {
+  background: #fff8e1;
+}
+
+.day-cell.leave {
+  background: #e3f2fd;
+}
+
+.day-cell.weekend {
+  background: #eceff1;
+}
+
+.summary-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  font-weight: 600;
+}

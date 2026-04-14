@@ -1,0 +1,126 @@
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+:root {
+	--brand-primary: #0f766e;
+	--brand-primary-strong: #0b5b55;
+	--brand-accent: #f59e0b;
+	--brand-danger: #dc2626;
+	--surface-bg: #f4f7fb;
+	--surface-card: #ffffff;
+	--text-primary: #0f172a;
+	--text-muted: #64748b;
+	--border-subtle: #dbe3ee;
+	--radius-md: 12px;
+	--radius-lg: 16px;
+	--shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	min-height: 100%;
+	font-family: 'Poppins', 'Segoe UI', sans-serif;
+	background: radial-gradient(circle at 10% 0%, #e6f8f5, var(--surface-bg) 36%);
+	color: var(--text-primary);
+}
+
+.text-muted {
+	color: var(--text-muted) !important;
+}
+
+.badge-success,
+.badge-warning,
+.badge-danger,
+.badge-info {
+	display: inline-flex;
+	align-items: center;
+	border-radius: 999px;
+	padding: 4px 10px;
+	font-size: 0.75rem;
+	font-weight: 600;
+}
+
+.badge-success {
+	background: #e8f8ef;
+	color: #166534;
+}
+
+.badge-warning {
+	background: #fff7e2;
+	color: #b45309;
+}
+
+.badge-danger {
+	background: #feeceb;
+	color: #991b1b;
+}
+
+.badge-info {
+	background: #e7f2ff;
+	color: #1e3a8a;
+}
+
+.card-hover {
+	transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.card-hover:hover {
+	transform: translateY(-2px);
+	box-shadow: var(--shadow-soft);
+}
+
+.mat-card {
+	border-radius: var(--radius-lg) !important;
+	border: 1px solid var(--border-subtle);
+	box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04) !important;
+}
+
+.mat-toolbar.mat-primary {
+	background: linear-gradient(90deg, var(--brand-primary), #11998e) !important;
+	color: #fff;
+}
+
+.mat-raised-button.mat-primary,
+.mat-flat-button.mat-primary {
+	background-color: var(--brand-primary) !important;
+}
+
+.mat-raised-button.mat-primary:hover,
+.mat-flat-button.mat-primary:hover {
+	background-color: var(--brand-primary-strong) !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+	color: #c6d3e1;
+}
+
+.mat-form-field.mat-focused .mat-form-field-outline-thick {
+	color: var(--brand-primary);
+}
+
+@media (max-width: 992px) {
+	.mat-toolbar {
+		padding: 0 12px;
+	}
+}
+
+@media (max-width: 768px) {
+	.mat-card {
+		border-radius: var(--radius-md) !important;
+	}
+
+	.mat-table {
+		min-width: 680px;
+	}
+}
+
+@media (max-width: 576px) {
+	body {
+		font-size: 14px;
+	}
+}

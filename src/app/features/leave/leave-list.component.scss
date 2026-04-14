@@ -1,0 +1,54 @@
+.leave-list-page {
+  padding: 16px;
+  display: grid;
+  gap: 16px;
+}
+
+.filter-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.leave-table {
+  width: 100%;
+}
+
+.status-badge {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 4px 9px;
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
+.status-badge.pending {
+  background: #fff8e1;
+  color: #ff8f00;
+}
+
+.status-badge.approved {
+  background: #e8f5e9;
+  color: #1b5e20;
+}
+
+.status-badge.rejected {
+  background: #ffebee;
+  color: #b71c1c;
+}
+
+@media (max-width: 960px) {
+  .filter-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .filter-grid {
+    grid-template-columns: 1fr;
+  }
+}

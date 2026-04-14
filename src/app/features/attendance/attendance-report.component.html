@@ -1,0 +1,35 @@
+<section class="attendance-report-page">
+  <mat-card>
+    <h2>Attendance Report</h2>
+
+    <div class="selectors">
+      <mat-form-field appearance="outline">
+        <mat-label>Month</mat-label>
+        <mat-select [formControl]="monthControl">
+          <mat-option *ngFor="let month of months" [value]="month.value">{{ month.label }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Year</mat-label>
+        <mat-select [formControl]="yearControl">
+          <mat-option *ngFor="let year of years" [value]="year">{{ year }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="calendar-grid">
+      <div class="weekday" *ngFor="let day of ['Sun','Mon','Tue','Wed','Thu','Fri','Sat']">{{ day }}</div>
+
+      <div class="day-cell" *ngFor="let cell of calendarCells" [ngClass]="cell.status.toLowerCase().replace('-', '')">
+        <span class="day-number">{{ cell.label }}</span>
+      </div>
+    </div>
+
+    <div class="summary-row">
+      <span>Present: {{ summary.present }}</span>
+      <span>Absent: {{ summary.absent }}</span>
+      <span>Leave: {{ summary.leave }}</span>
+    </div>
+  </mat-card>
+</section>

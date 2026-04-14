@@ -1,0 +1,46 @@
+.dropzone {
+  border: 2px dashed #90a4ae;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  background: #f8fafc;
+}
+
+.dropzone p {
+  margin: 8px 0 0;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.dropzone small {
+  display: block;
+  margin-top: 4px;
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.dropzone input[type='file'] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.file-meta {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.file-meta span {
+  display: block;
+  color: rgba(0, 0, 0, 0.62);
+  font-size: 0.8rem;
+}
+
+.error {
+  margin: 6px 0 0;
+  color: #b71c1c;
+  font-size: 0.8rem;
+}

@@ -1,0 +1,128 @@
+.dashboard-page {
+  display: grid;
+  gap: 16px;
+  padding: 16px;
+}
+
+.welcome-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.welcome-banner h2 {
+  margin: 0;
+}
+
+.welcome-banner p {
+  margin: 4px 0 0;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.role-badge {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #e8eaf6;
+  color: #283593;
+  font-weight: 600;
+  font-size: 0.82rem;
+}
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.chart-card {
+  padding: 12px;
+}
+
+.chart-card h3 {
+  margin: 0 0 10px;
+}
+
+.chart-body {
+  height: 300px;
+}
+
+.bottom-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+}
+
+.table-card {
+  overflow: auto;
+}
+
+.table-card h3,
+.quick-actions h3 {
+  margin: 0 0 12px;
+}
+
+.recent-table {
+  width: 100%;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.status-badge.pending {
+  background: #fff3e0;
+  color: #e65100;
+}
+
+.status-badge.approved {
+  background: #e8f5e9;
+  color: #1b5e20;
+}
+
+.status-badge.rejected {
+  background: #ffebee;
+  color: #b71c1c;
+}
+
+.quick-actions {
+  align-self: start;
+}
+
+.actions-list {
+  display: grid;
+  gap: 12px;
+}
+
+@media (max-width: 1080px) {
+  .kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bottom-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .kpi-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-page {
+    padding: 12px;
+  }
+}

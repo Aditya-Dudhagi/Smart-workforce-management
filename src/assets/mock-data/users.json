@@ -1,0 +1,23 @@
+[
+  {
+    "id": "5f6a8c11-7b0d-4b4f-a40f-8b7e7e8aa001",
+    "username": "admin",
+    "password": "admin123",
+    "role": "Admin",
+    "employeeId": "b4a0b6c2-91d3-4c89-9e14-0a6f0f1a1001"
+  },
+  {
+    "id": "d2af34ae-3d3a-41bb-8a4d-77a18a67b002",
+    "username": "hr",
+    "password": "hr123",
+    "role": "HR",
+    "employeeId": "63fd1cf5-3a85-44db-970f-62e8f7bc1002"
+  },
+  {
+    "id": "7c3e2c68-91bd-4f6c-b9d0-92fe46cb7003",
+    "username": "emp",
+    "password": "emp123",
+    "role": "Employee",
+    "employeeId": "f0f4f3cf-2f1c-4a53-8fbb-4d2e6f8d1003"
+  }
+]

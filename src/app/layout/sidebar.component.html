@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">Menu</mat-toolbar>
+
+<mat-nav-list>
+  <ng-container *ngFor="let item of navItems">
+    <a
+      mat-list-item
+      *ngIf="canView(item.roles)"
+      [routerLink]="item.route"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      (click)="onNavigate()"
+    >
+      <mat-icon matListIcon>{{ item.icon }}</mat-icon>
+      <span>{{ item.label }}</span>
+    </a>
+  </ng-container>
+</mat-nav-list>

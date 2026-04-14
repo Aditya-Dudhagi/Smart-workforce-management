@@ -1,0 +1,10 @@
+<section class="leave-balance-page">
+  <div class="balance-grid">
+    <mat-card *ngFor="let card of cards">
+      <h3>{{ card.type }}</h3>
+      <p><strong>Remaining:</strong> {{ card.remaining }} / {{ card.total }}</p>
+      <p><strong>Used:</strong> {{ card.used }}</p>
+      <mat-progress-bar mode="determinate" [value]="(card.used / card.total) * 100"></mat-progress-bar>
+    </mat-card>
+  </div>
+</section>

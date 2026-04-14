@@ -1,0 +1,66 @@
+<section class="login-page">
+  <div>
+    <mat-card class="login-card">
+      <mat-card-content>
+        <div class="logo-area">
+          <h2>Smart Workforce Mgmt</h2>
+          <p>Company Logo Area</p>
+        </div>
+
+        <form [formGroup]="loginForm" (ngSubmit)="submit()" novalidate>
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Username</mat-label>
+            <input matInput formControlName="username" autocomplete="username" />
+            <mat-error *ngIf="usernameControl.hasError('required') && usernameControl.touched">
+              Username is required
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Password</mat-label>
+            <input
+              matInput
+              formControlName="password"
+              [type]="hidePassword ? 'password' : 'text'"
+              autocomplete="current-password"
+            />
+            <button
+              mat-icon-button
+              matSuffix
+              type="button"
+              [attr.aria-label]="hidePassword ? 'Show password' : 'Hide password'"
+              (click)="hidePassword = !hidePassword"
+            >
+              <mat-icon>{{ hidePassword ? 'visibility' : 'visibility_off' }}</mat-icon>
+            </button>
+            <mat-error *ngIf="passwordControl.hasError('required') && passwordControl.touched">
+              Password is required
+            </mat-error>
+            <mat-error *ngIf="passwordControl.hasError('minlength') && passwordControl.touched">
+              Password must be at least 6 characters
+            </mat-error>
+          </mat-form-field>
+
+          <p class="error-text" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+          <button
+            mat-raised-button
+            color="primary"
+            class="full-width"
+            type="submit"
+            [disabled]="isLoading$"
+          >
+            <mat-spinner *ngIf="isLoading$" class="spinner" diameter="18"></mat-spinner>
+            {{ isLoading$ ? 'Signing in...' : 'Sign in' }}
+          </button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+
+    <div class="demo-credentials">
+      <div>Admin: admin / admin123</div>
+      <div>HR: hr / hr123</div>
+      <div>Employee: emp / emp123</div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,8 @@
+<mat-card class="kpi-card" [style.--kpi-color]="color">
+  <div class="kpi-header">
+    <span class="kpi-title">{{ title }}</span>
+    <mat-icon>{{ icon }}</mat-icon>
+  </div>
+
+  <div class="kpi-value" [attr.data-value]="value">{{ value }}</div>
+</mat-card>

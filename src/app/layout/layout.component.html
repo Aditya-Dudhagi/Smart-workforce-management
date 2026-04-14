@@ -1,0 +1,18 @@
+<mat-sidenav-container class="layout-container">
+  <mat-sidenav
+    #drawer
+    [mode]="(isMobile$ | async) ? 'over' : 'side'"
+    [opened]="!(isMobile$ | async)"
+    class="layout-sidenav"
+  >
+    <app-sidebar (navigateOnMobile)="drawer.close()"></app-sidebar>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <app-topbar></app-topbar>
+
+    <main class="layout-content">
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

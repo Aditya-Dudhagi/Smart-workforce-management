@@ -1,0 +1,19 @@
+<div class="dropzone" (drop)="onDrop($event)" (dragover)="onDragOver($event)">
+  <mat-icon>cloud_upload</mat-icon>
+  <p>Drag & drop files here or click to browse</p>
+  <small>Accepted: {{ accept }} | Max: {{ maxSizeMB }}MB</small>
+
+  <input type="file" [accept]="accept" [multiple]="multiple" (change)="onFilesSelected($event)" />
+</div>
+
+<div class="file-meta" *ngIf="selectedFile">
+  <div>
+    <strong>{{ selectedFile.name }}</strong>
+    <span>{{ (selectedFile.size / 1024) | number: '1.0-0' }} KB</span>
+  </div>
+  <button mat-icon-button type="button" (click)="removeSelectedFile()">
+    <mat-icon>delete</mat-icon>
+  </button>
+</div>
+
+<p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>

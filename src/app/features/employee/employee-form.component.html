@@ -1,0 +1,142 @@
+<section class="employee-form-page">
+  <mat-card>
+    <h2>{{ isEditMode ? 'Edit Employee' : 'Add Employee' }}</h2>
+
+    <mat-horizontal-stepper linear>
+      <mat-step [stepControl]="personalInfoGroup">
+        <form [formGroup]="personalInfoGroup">
+          <ng-template matStepLabel>Personal Info</ng-template>
+
+          <div class="form-grid">
+            <mat-form-field appearance="outline">
+              <mat-label>First Name</mat-label>
+              <input matInput formControlName="firstName" />
+              <mat-error *ngIf="personalInfoGroup.get('firstName')?.touched && personalInfoGroup.get('firstName')?.hasError('required')">
+                First name is required
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Last Name</mat-label>
+              <input matInput formControlName="lastName" />
+              <mat-error *ngIf="personalInfoGroup.get('lastName')?.touched && personalInfoGroup.get('lastName')?.hasError('required')">
+                Last name is required
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input matInput formControlName="email" />
+              <mat-error *ngIf="personalInfoGroup.get('email')?.touched && personalInfoGroup.get('email')?.hasError('required')">
+                Email is required
+              </mat-error>
+              <mat-error *ngIf="personalInfoGroup.get('email')?.touched && personalInfoGroup.get('email')?.hasError('email')">
+                Enter a valid email
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Phone</mat-label>
+              <input matInput formControlName="phone" />
+              <mat-error *ngIf="personalInfoGroup.get('phone')?.touched && personalInfoGroup.get('phone')?.hasError('required')">
+                Phone is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="step-actions">
+            <button mat-raised-button color="primary" matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="jobInfoGroup">
+        <form [formGroup]="jobInfoGroup">
+          <ng-template matStepLabel>Job Info</ng-template>
+
+          <div class="form-grid">
+            <mat-form-field appearance="outline">
+              <mat-label>Department</mat-label>
+              <mat-select formControlName="department">
+                <mat-option *ngFor="let dept of departments" [value]="dept">{{ dept }}</mat-option>
+              </mat-select>
+              <mat-error *ngIf="jobInfoGroup.get('department')?.touched && jobInfoGroup.get('department')?.hasError('required')">
+                Department is required
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Role</mat-label>
+              <mat-select formControlName="role">
+                <mat-option *ngFor="let role of roles" [value]="role">{{ role }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Joining Date</mat-label>
+              <input matInput formControlName="joiningDate" type="date" />
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Status</mat-label>
+              <mat-select formControlName="status">
+                <mat-option *ngFor="let status of statuses" [value]="status">{{ status }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="step-actions">
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-raised-button color="primary" matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step>
+        <ng-template matStepLabel>Skills & Documents</ng-template>
+
+        <div class="profile-upload">
+          <p class="section-label">Profile Picture</p>
+          <app-file-upload [accept]="'image/*'" [multiple]="false" (filesSelected)="onProfileFileSelected($event)"></app-file-upload>
+
+          <img *ngIf="profilePreview" [src]="profilePreview" alt="Profile preview" class="profile-preview" />
+        </div>
+
+        <div class="skills-block">
+          <p class="section-label">Skills</p>
+
+          <mat-chip-list #chipList aria-label="Skills">
+            <mat-chip *ngFor="let skill of skillsArray.controls; let i = index" [selectable]="true" [removable]="true" (removed)="removeSkill(i)">
+              {{ skill.value }}
+              <mat-icon matChipRemove>cancel</mat-icon>
+            </mat-chip>
+            <input
+              [formControl]="skillInputControl"
+              [matChipInputFor]="chipList"
+              [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+              [matChipInputAddOnBlur]="true"
+              (matChipInputTokenEnd)="addSkill($event)"
+              placeholder="Add a skill"
+            />
+          </mat-chip-list>
+        </div>
+
+        <div class="documents-block">
+          <p class="section-label">Documents</p>
+          <app-file-upload (filesSelected)="onDocumentsSelected($event)"></app-file-upload>
+
+          <ul class="documents-list" *ngIf="documentsArray.length">
+            <li *ngFor="let doc of documentsArray.controls; let i = index">Document {{ i + 1 }}</li>
+          </ul>
+        </div>
+
+        <div class="step-actions">
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-raised-button color="primary" (click)="submit()" [disabled]="isSaving">
+            {{ isSaving ? 'Saving...' : (isEditMode ? 'Update Employee' : 'Create Employee') }}
+          </button>
+        </div>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </mat-card>
+</section>

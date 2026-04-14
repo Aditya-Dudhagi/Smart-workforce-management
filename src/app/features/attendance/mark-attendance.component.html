@@ -1,0 +1,26 @@
+<section class="mark-attendance-page">
+  <mat-card>
+    <h2>Mark Attendance</h2>
+    <p class="today">Today: {{ today | date: 'fullDate' }}</p>
+
+    <div *ngIf="todayRecord" class="status-row">
+      <span class="status-badge" [ngClass]="todayRecord.status.toLowerCase().replace('-', '')">{{ todayRecord.status }}</span>
+      <span *ngIf="todayRecord.checkIn">Check-in: {{ todayRecord.checkIn }}</span>
+      <span *ngIf="todayRecord.checkOut">Check-out: {{ todayRecord.checkOut }}</span>
+    </div>
+
+    <mat-form-field appearance="outline" *ngIf="canManageStatus()">
+      <mat-label>Status</mat-label>
+      <mat-select [formControl]="statusControl">
+        <mat-option value="Present">Present</mat-option>
+        <mat-option value="Half-Day">Half-Day</mat-option>
+        <mat-option value="Leave">Leave</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="actions">
+      <button mat-raised-button color="primary" (click)="checkIn()" [disabled]="!!todayRecord?.checkIn">Check In</button>
+      <button mat-stroked-button color="primary" *ngIf="todayRecord?.checkIn && !todayRecord?.checkOut" (click)="checkOut()">Check Out</button>
+    </div>
+  </mat-card>
+</section>

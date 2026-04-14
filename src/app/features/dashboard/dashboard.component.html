@@ -1,0 +1,83 @@
+<section class="dashboard-page" *ngIf="vm$ | async as vm">
+  <mat-card class="welcome-banner">
+    <div>
+      <h2>Welcome back, {{ vm.user?.username || 'User' }}</h2>
+      <p>Here is your workforce snapshot for today.</p>
+    </div>
+    <span class="role-badge">{{ vm.user?.role || 'Employee' }}</span>
+  </mat-card>
+
+  <div class="kpi-grid">
+    <app-kpi-card title="Total Employees" [value]="vm.totalEmployees" icon="groups" color="#3f51b5"></app-kpi-card>
+    <app-kpi-card title="Departments" [value]="vm.departments" icon="apartment" color="#0097a7"></app-kpi-card>
+    <app-kpi-card title="Leaves This Month" [value]="vm.leavesThisMonth" icon="event_note" color="#5e35b1"></app-kpi-card>
+    <app-kpi-card title="Pending Leaves" [value]="vm.pendingLeaves" icon="hourglass_top" color="#f57c00"></app-kpi-card>
+  </div>
+
+  <div class="charts-grid">
+    <mat-card class="chart-card">
+      <h3>Employees by Department</h3>
+      <div class="chart-body">
+        <canvas
+          baseChart
+          [data]="employeeBarChartData$ | async"
+          [options]="barChartOptions"
+          [type]="'bar'"
+        ></canvas>
+      </div>
+    </mat-card>
+
+    <mat-card class="chart-card">
+      <h3>Leave Status Breakdown</h3>
+      <div class="chart-body">
+        <canvas
+          baseChart
+          [data]="leaveDoughnutChartData$ | async"
+          [options]="doughnutChartOptions"
+          [type]="'doughnut'"
+        ></canvas>
+      </div>
+    </mat-card>
+  </div>
+
+  <div class="bottom-grid">
+    <mat-card class="table-card">
+      <h3>Recent Leave Requests</h3>
+
+      <table mat-table [dataSource]="vm.recentLeaves" class="recent-table">
+        <ng-container matColumnDef="employeeName">
+          <th mat-header-cell *matHeaderCellDef>Employee</th>
+          <td mat-cell *matCellDef="let row">{{ row.employeeName }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="type">
+          <th mat-header-cell *matHeaderCellDef>Type</th>
+          <td mat-cell *matCellDef="let row">{{ row.type }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef>Status</th>
+          <td mat-cell *matCellDef="let row">
+            <span class="status-badge" [ngClass]="row.status.toLowerCase()">{{ row.status }}</span>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef>Applied On</th>
+          <td mat-cell *matCellDef="let row">{{ row.date | date: 'mediumDate' }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </mat-card>
+
+    <mat-card class="quick-actions" *ngIf="showQuickActions()">
+      <h3>Quick Actions</h3>
+      <div class="actions-list">
+        <button mat-raised-button color="primary" routerLink="/employees">Add Employee</button>
+        <button mat-stroked-button color="primary" routerLink="/leave">Review Leaves</button>
+      </div>
+    </mat-card>
+  </div>
+</section>

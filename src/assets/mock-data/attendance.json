@@ -1,0 +1,162 @@
+[
+  {
+    "id": "341a0c6e-fc6f-4a31-aecd-2f58d9aa3001",
+    "employeeId": "f0f4f3cf-2f1c-4a53-8fbb-4d2e6f8d1003",
+    "date": "2026-04-01",
+    "checkIn": "09:12",
+    "checkOut": "18:08",
+    "status": "Present"
+  },
+  {
+    "id": "7fbb7d4a-3f59-4ec9-8439-d869264f3002",
+    "employeeId": "a5c6d789-9e2f-4f78-8d77-984dbaea1004",
+    "date": "2026-04-01",
+    "checkIn": "09:28",
+    "checkOut": "18:01",
+    "status": "Present"
+  },
+  {
+    "id": "3f5ac7d3-f490-4f45-81f2-a74a0d9c3003",
+    "employeeId": "9b7d5cc4-1f5f-4cee-a2dc-0c8c4e6c1006",
+    "date": "2026-04-01",
+    "checkIn": "",
+    "checkOut": "",
+    "status": "Leave"
+  },
+  {
+    "id": "2294e10a-3794-4d27-94f5-f2f7a40a3004",
+    "employeeId": "0f9ab257-3cb8-4d5a-9469-fdca35f51007",
+    "date": "2026-04-02",
+    "checkIn": "09:35",
+    "checkOut": "13:40",
+    "status": "Half-Day"
+  },
+  {
+    "id": "4dc58bc7-95db-4e69-9f2f-6202ddfe3005",
+    "employeeId": "3d6a9e71-2f44-4f21-8f68-1967f8c81008",
+    "date": "2026-04-02",
+    "checkIn": "09:05",
+    "checkOut": "18:22",
+    "status": "Present"
+  },
+  {
+    "id": "e6f79f66-fb0d-4817-bf89-0f94e6ad3006",
+    "employeeId": "b4a0b6c2-91d3-4c89-9e14-0a6f0f1a1001",
+    "date": "2026-04-03",
+    "checkIn": "08:52",
+    "checkOut": "18:16",
+    "status": "Present"
+  },
+  {
+    "id": "d7ad7f8f-f8d8-4d95-bf17-5b18848f3007",
+    "employeeId": "f0f4f3cf-2f1c-4a53-8fbb-4d2e6f8d1003",
+    "date": "2026-04-03",
+    "checkIn": "",
+    "checkOut": "",
+    "status": "Leave"
+  },
+  {
+    "id": "85d511f4-f64a-4870-9e65-0dc8d19e3008",
+    "employeeId": "a5c6d789-9e2f-4f78-8d77-984dbaea1004",
+    "date": "2026-04-04",
+    "checkIn": "",
+    "checkOut": "",
+    "status": "Absent"
+  },
+  {
+    "id": "6b34b8b3-e7d9-4f99-a883-a5acb24e3009",
+    "employeeId": "9b7d5cc4-1f5f-4cee-a2dc-0c8c4e6c1006",
+    "date": "2026-04-04",
+    "checkIn": "09:20",
+    "checkOut": "18:12",
+    "status": "Present"
+  },
+  {
+    "id": "57d9f8ea-9f66-4c03-a1c2-9adab9273010",
+    "employeeId": "0f9ab257-3cb8-4d5a-9469-fdca35f51007",
+    "date": "2026-04-05",
+    "checkIn": "09:18",
+    "checkOut": "18:05",
+    "status": "Present"
+  },
+  {
+    "id": "0a306865-3bb3-4697-a2e2-c31cc5df3011",
+    "employeeId": "3d6a9e71-2f44-4f21-8f68-1967f8c81008",
+    "date": "2026-04-05",
+    "checkIn": "09:47",
+    "checkOut": "14:02",
+    "status": "Half-Day"
+  },
+  {
+    "id": "77ad7f7f-8f16-4683-9434-4fd9cb413012",
+    "employeeId": "b4a0b6c2-91d3-4c89-9e14-0a6f0f1a1001",
+    "date": "2026-04-06",
+    "checkIn": "08:58",
+    "checkOut": "18:30",
+    "status": "Present"
+  },
+  {
+    "id": "2ba6a2d0-c381-42ce-96a8-545a72f63013",
+    "employeeId": "f0f4f3cf-2f1c-4a53-8fbb-4d2e6f8d1003",
+    "date": "2026-04-06",
+    "checkIn": "09:11",
+    "checkOut": "18:04",
+    "status": "Present"
+  },
+  {
+    "id": "a1fc5730-40eb-43db-b515-af7a5d7f3014",
+    "employeeId": "a5c6d789-9e2f-4f78-8d77-984dbaea1004",
+    "date": "2026-04-07",
+    "checkIn": "",
+    "checkOut": "",
+    "status": "Leave"
+  },
+  {
+    "id": "aa6ab42f-12d0-4e53-a7bc-9f533f1f3015",
+    "employeeId": "9b7d5cc4-1f5f-4cee-a2dc-0c8c4e6c1006",
+    "date": "2026-04-07",
+    "checkIn": "09:16",
+    "checkOut": "18:14",
+    "status": "Present"
+  },
+  {
+    "id": "204dbf7b-13f2-4867-bd16-86ad3f973016",
+    "employeeId": "0f9ab257-3cb8-4d5a-9469-fdca35f51007",
+    "date": "2026-04-08",
+    "checkIn": "09:41",
+    "checkOut": "",
+    "status": "Absent"
+  },
+  {
+    "id": "e4e654eb-8f08-4c3c-955f-6584b86f3017",
+    "employeeId": "3d6a9e71-2f44-4f21-8f68-1967f8c81008",
+    "date": "2026-04-08",
+    "checkIn": "09:07",
+    "checkOut": "18:26",
+    "status": "Present"
+  },
+  {
+    "id": "37adf1e6-a6a4-45ef-aacd-4d5ad3523018",
+    "employeeId": "b4a0b6c2-91d3-4c89-9e14-0a6f0f1a1001",
+    "date": "2026-04-09",
+    "checkIn": "08:50",
+    "checkOut": "18:09",
+    "status": "Present"
+  },
+  {
+    "id": "f7de296b-cded-4447-9ffd-e474da743019",
+    "employeeId": "f0f4f3cf-2f1c-4a53-8fbb-4d2e6f8d1003",
+    "date": "2026-04-09",
+    "checkIn": "09:32",
+    "checkOut": "18:00",
+    "status": "Present"
+  },
+  {
+    "id": "e0c2478c-95b5-4f91-bb84-f54a39e73020",
+    "employeeId": "3d6a9e71-2f44-4f21-8f68-1967f8c81008",
+    "date": "2026-04-10",
+    "checkIn": "",
+    "checkOut": "",
+    "status": "Leave"
+  }
+]

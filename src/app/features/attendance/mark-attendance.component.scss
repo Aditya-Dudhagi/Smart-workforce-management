@@ -1,0 +1,48 @@
+.mark-attendance-page {
+  padding: 16px;
+}
+
+.today {
+  color: rgba(0, 0, 0, 0.72);
+}
+
+.status-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 10px 0;
+  align-items: center;
+}
+
+.status-badge {
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
+.status-badge.present {
+  background: #e8f5e9;
+  color: #1b5e20;
+}
+
+.status-badge.absent {
+  background: #ffebee;
+  color: #b71c1c;
+}
+
+.status-badge.halfday {
+  background: #fff8e1;
+  color: #ff8f00;
+}
+
+.status-badge.leave {
+  background: #e3f2fd;
+  color: #0d47a1;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
